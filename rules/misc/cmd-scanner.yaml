@@ -1,0 +1,28 @@
+id: cmd-scanner
+
+info:
+  name: Cmd Scanner
+  author: ahi
+  severity: high
+
+
+file:
+  - extensions:
+      - all
+
+    extractors:
+      - type: regex
+        name: command found
+        regex:
+          - '(?i)whoami'
+          - '(?i)ipconfig'
+          - '(?i)systeminfo'
+          - '(?i)powershell'
+          - '(?i)certutil'
+          - '(?i)net use'
+          - '(?i)set-alias'
+          - '(?i)bitsadmin'
+          - '(?i)Import-Module'
+          - '(?i)netsh'
+          - '(?i)DownloadFile\('
+          - '(?i)\(new-object'

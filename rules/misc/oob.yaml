@@ -16,6 +16,11 @@ file:
         name: dnslog.cn
         words:
           - "dnslog.cn"
+          - "log.dnslog.sbs"
+          - "log.dnslog.myfw.us"
+          - "log.nat.cloudns.ph"
+          - "ipv6.1433.eu.org"
+          - "ipv6.bypass.eu.org"
 
       - type: word
         name: oast.pro
