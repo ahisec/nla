@@ -1,0 +1,44 @@
+id: hikvision-scanner
+
+info:
+  name: hikvision - Detect
+  author: ahi
+  severity: high
+
+file:
+  - extensions:
+      - all
+
+    extractors:
+      - type: regex
+        name: fastjson
+        regex:
+          - '(?i)/bic/ssoService/v1/applyCT'
+
+      - type: regex
+        name: readfile
+        regex:
+          - '(?i)/lm/api/files\;\.css\?link=.*'
+          - '(?i)/center/api/task/\.\.\;/orgManage/v1/orgs/download?fileName=.*'
+
+      - type: regex
+        name: rce
+        regex:
+          - '(?i)/portal/cas/login/ajax/licenseExpire\.do'
+          - '(?i)/center/api/installation/detection\;\.js'
+
+      - type: regex
+        name: uploadfile
+        regex:
+          - '(?i)/svm/api/external/report'
+          - '(?i)/portal/ui/login/\.\.\;/\.\.\;/.*'
+          - '(?i)/center/api/files\;\.html'
+          - '(?i)/clusterMgr/.*\.jsp\;js'
+          - '(?i)/clusterMgr/clusters/ssl/file\;\.js'
+          - '(?i)/clusterMgr/languages/.*\;\.js'
+          - '(?i)/eps/resourceOperations/upload\.action'
+          - '(?i)/eps/upload/.*\.jsp'
+          - '(?i)/eps/api/resourceOperations/upload?token=.*'
+          - '(?i)/msp/home/upload.action;getPic?&type=ios'
+          - '(?i)/center_install/picUploadService/v1/uploadAllPackage/image'
+

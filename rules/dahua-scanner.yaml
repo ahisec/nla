@@ -1,0 +1,52 @@
+id: dahua-scanner
+
+info:
+  name: dahua - Detect
+  author: ahi
+  severity: high
+
+file:
+  - extensions:
+      - all
+
+    extractors:
+      - type: regex
+        name: fastjson
+        regex:
+          - '(?i)/evo-runs/v1\.0/auths/sysusers/random'
+
+      - type: regex
+        name: readfile
+        regex:
+          - '(?i)/evo-apigw/evo-cirs/file/readPic\?fileUrl=file.*'
+          - '(?i)/portal/itc/attachment_downloadByUrlAtt\.action\?filePath=file:.*'
+          - '(?i)/admin/user_getUserInfoByUserName\.action\?userName=system'
+
+      - type: regex
+        name: rce
+        regex:
+          - '(?i)/portal/attachment_downloadAtt\.action\?filePath=.*'
+          - '(?i)/CardSolution/card/accessControl/swingCardRecord/deleteFtp'
+          - '(?i)/ipms/barpay/pay'
+
+      - type: regex
+        name: sqli
+        regex:
+          - '(?i)/portal/services/clientServer'
+          - '(?i)/portal/services/carQuery/getFaceCapture/searchJson/'
+
+      - type: regex
+        name: weakpass
+        regex:
+          - '(?i)/evo-apigw/evo-oauth/oauth/token'
+
+      - type: regex
+        name: uploadfile
+        regex:
+          - '(?i)/emap/webservice/gis/soap/poi'
+          - '(?i)/portal/updateOcx_updateCab\.action'
+          - '(?i)/portal/updateOcx_updateZip\.action'
+          - '(?i)/publishing/publishing/material/file/video'
+          - '(?i)/publishingImg/.*\.jsp'
+          - '(?i)/OAapp/jsp/.*\.jsp'
+
