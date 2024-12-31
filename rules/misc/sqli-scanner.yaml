@@ -1,0 +1,16 @@
+id: sqli-scanner
+
+info:
+  name: sqli - Detect
+  author: ahi
+  severity: high
+
+file:
+  - extensions:
+      - all
+
+    extractors:
+      - type: regex
+        regex:
+          - '(?i)(group_concat|greatest|ascii|substr|strcmp|sleep|benchmark|hex|md5|database|CHAR|bin|mid|substring|updatexml|distinct|pg_sleep|substring|serverproperty|values|when|upper|xmltype|sha)\('
+          - '(?i)(table_name|information_schema|sys.loginuser|sys.all_users|waitfor delay)'

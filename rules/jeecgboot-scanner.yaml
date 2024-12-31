@@ -1,0 +1,46 @@
+id: jeecgboot-scanner
+
+info:
+  name: JeecgBoot - Detect
+  author: ahi
+  severity: high
+
+file:
+  - extensions:
+      - all
+
+    extractors:
+      - type: regex
+        name: queryfieldby_sqli
+        regex:
+          - '(?i)/jmreport/queryFieldBySql'
+
+      - type: regex
+        name: jeecgformdemocontroller_jndi
+        regex:
+          - '(?i)/api/../jeecgFormDemoController.do\?interfaceTest'
+
+      - type: regex
+        name: getTotalData_sqli
+        regex:
+          - '(?i)/drag/onlDragDatasetHead/getTotalData'
+
+      - type: regex
+        name: aviatorscript_sqli
+        regex:
+          - '(?i)/save\?previousPage=.*&jmLink=.*&token=.*'
+
+      - type: regex
+        name: passwordchange
+        regex:
+          - '(?i)/sys/user/passwordChange\?username=.*&password=.*&smscode=.*&phone=.*'          
+
+      - type: regex
+        name: commonController_uploadfile
+        regex:
+          - '(?i)/api/../commonController.do\?parserXml'            
+
+      - type: regex
+        name: jmLink_bypass
+        regex:
+          - '(?i)/jmreport/queryFieldBySql\?previousPage=.*&jmLink=.*=&token=.*'            

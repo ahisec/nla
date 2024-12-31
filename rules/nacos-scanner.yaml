@@ -1,0 +1,27 @@
+id: nacos-scanner
+
+info:
+  name: nacos - Detect
+  author: ahi
+  severity: high
+
+file:
+  - extensions:
+      - all
+
+    extractors:
+      - type: regex
+        name: CVE-2021-29441
+        regex:
+          - '(?i)/v1/cs/configs\?export=true&group=.*&tenant=.*&appName=&.*=&dataId=.*'
+
+      - type: regex
+        name: CVE-2021-29442
+        regex:
+          - '(?i)/v1/cs/ops/derby\?sql=select\+st\.tablename\+from\+sys\.systables\+st'
+
+      - type: regex
+        name: default-token
+        regex:
+          - 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWNvcyIsImV4cCI6OTk5OTk5OTk5OTl9.-isk56R8NfioHVYmpj4oz92nUteNBCN3HRd0-Hfk76g'
+          - 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuYWNvcyIsImV4cCI6OTk5OTk5OTk5OX0.00LxfkpzYpdVeojTfqMhtpPvNidpNcDoLU90MnHzA8Q'
