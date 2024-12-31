@@ -1,0 +1,26 @@
+id: thinkphp-scanner
+
+info:
+  name: thinkphp - Detect
+  author: ahi
+  severity: high
+
+file:
+  - extensions:
+      - all
+
+    extractors:
+      - type: regex
+        name: CNVD-2022-86535
+        regex:
+          - '(?i)/\?lang=../.*'
+
+      - type: regex
+        name: thinkphp-2-rce
+        regex:
+          - '(?i)/index.php\?s=/index/index/name/'
+
+      - type: regex
+        name: thinkphp-5022-rce
+        regex:
+          - '(?i)app/invokefunction\&function=call_user_func_array\&vars\[0\]'

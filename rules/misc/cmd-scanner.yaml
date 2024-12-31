@@ -26,3 +26,5 @@ file:
           - '(?i)netsh'
           - '(?i)DownloadFile\('
           - '(?i)\(new-object'
+          - '(?i)\%SystemRoot\%'
+          - '(?i)\%temp\%'

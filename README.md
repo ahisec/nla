@@ -22,6 +22,7 @@
 - [ ] 用友
 - [ ] 通达
 - [ ] 亿赛通
+- [x] Thinkphp
 - [x] windows命令
 - [x] linux命令
 
